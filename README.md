@@ -7,19 +7,23 @@ Installs a set of dotfiles from a Git repository. By default it installs the bma
 ##Role variables
 Default variables are in ```defaults/main.yml```
 
-```dotfiles_repo: "https://github.com/bmacauley/dotfiles.git" ```
+```dotfiles_repo: "https://github.com/bmacauley/dotfiles.git" 
+```
 The git repository containing the dotfiles. Dotfiles should be laid out within the root directory of the repository
 
 
-```dotfiles_repo_accept_hostkey: no ```
+```dotfiles_repo_accept_hostkey: no
+```
 Add a hostkey for the repo url if not added. If ssh_opts contains "-o StrictHostKeyChecking=no", this parameter is ignored.
 
 
-```dotfiles_repo_local_destination: "~/.dotfiles" ```
+```dotfiles_repo_local_destination: "~/.dotfiles" 
+```
 The local path where the dotfiles_repo will be cloned
 
 
-```dotfiles_home: "~" ```
+```dotfiles_home: "~" 
+```
 The home directory where dotfiles will be linked. Generally, the default should work, but in some circumstances, or when running the role as sudo on behalf of another user, you may want to specify the full path.
 
 
