@@ -1,6 +1,8 @@
 # ansible-role-dotfiles
 Installs a set of dotfiles from a Git repository. By default it installs the bmacauley/dotfiles. You can use other dotfiles by changing the configuration.
 
+![Build status](https://travis-ci.org/bmacauley/ansible-role-homebrew.svg?branch=master)
+
 ##Requirements
 - Git
 
