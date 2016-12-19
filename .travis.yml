@@ -18,18 +18,20 @@ script:
   # Run container in detached state.
   - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/ansible-role-dotfiles:ro ${run_opts} bmacauley/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
 
+  # 
+
   # Install dependencies.
   - 'docker exec "$(cat ${container_id})" ansible-galaxy install -r /etc/ansible/roles/ansible-role-dotfiles/tests/requirements.yml'
 
   # Ansible syntax check.
-  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-dotfiles/tests/test.yml --syntax-check'
+  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-dotfiles/tests/tests.yml --syntax-check'
 
   # Test role.
-  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-dotfiles/tests/test.yml'
+  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-dotfiles/tests/tests.yml'
 
   # Test role idempotence.
   - idempotence=$(mktemp)
-  - docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-role-dotfiles/tests/test.yml | tee -a ${idempotence}
+  - docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-role-dotfiles/tests/tests.yml | tee -a ${idempotence}
   - >
     tail ${idempotence}
     | grep -q 'changed=0.*failed=0'
