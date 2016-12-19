@@ -46,11 +46,11 @@ The files from the `dotfiles_repo` that will be linked to the `dotfiles_home`
 none
 
 ##Example playbook
-
+```
 - hosts: localhost
   roles:
-    - { role: bmacauley.ansible-role-dotfiles }
-
+    - { role: ansible-role-dotfiles }
+```
 
 
 ##License
