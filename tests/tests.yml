@@ -7,5 +7,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - geerlingguy.git
     - ansible-role-dotfiles
