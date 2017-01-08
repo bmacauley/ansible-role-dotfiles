@@ -59,6 +59,6 @@ MIT
 
 ##Author
 
-Brian Macauley
+Brian Macauley brian.macauley@gmail.com
 
 Based on [geerlingguy/ansible-role-dotfiles](https://github.com/geerlingguy/ansible-role-dotfiles)
