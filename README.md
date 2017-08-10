@@ -3,10 +3,10 @@ Installs a set of dotfiles from a Git repository. By default it installs the bma
 
 ![Build status](https://travis-ci.org/bmacauley/ansible-role-homebrew.svg?branch=master)
 
-##Requirements
+## Requirements
 - Git
 
-##Role variables
+## Role variables
 Default variables are in `defaults/main.yml`
 
 ```
@@ -42,10 +42,10 @@ dotfiles_files:
 ```
 The files from the `dotfiles_repo` that will be linked to the `dotfiles_home`
 
-##Dependencies
+## Dependencies
 none
 
-##Example playbook
+## Example playbook
 ```
 - hosts: localhost
   roles:
@@ -53,11 +53,11 @@ none
 ```
 
 
-##License
+## License
 
 MIT
 
-##Author
+## Author
 
 Brian Macauley brian.macauley@gmail.com
 
